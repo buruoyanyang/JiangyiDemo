@@ -16,7 +16,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".LinearLayoutTest" />
-        <activity android:name=".TableLayoutTest"></activity>
+        <activity android:name=".TableLayoutTest" />
+        <activity android:name=".SimpleAdapterTest" />
+        <activity android:name=".BaseAdapterTest" />
+        <activity android:name=".AutoCompleteTextViewTest"></activity>
     </application>
 
 </manifest>

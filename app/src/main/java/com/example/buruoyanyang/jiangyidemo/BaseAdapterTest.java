@@ -11,14 +11,12 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.List;
-
-public class LinearLayoutTest extends AppCompatActivity {
+public class BaseAdapterTest extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_linear_layout_test);
+        setContentView(R.layout.activity_base_adapter_test);
         ListView listView = (ListView) findViewById(R.id.myList);
         BaseAdapter adapter = new BaseAdapter() {
             @Override
@@ -42,12 +40,14 @@ public class LinearLayoutTest extends AppCompatActivity {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 //创建一个LinearLayout,并向其中添加两个组件
-                LinearLayout linearLayout = new LinearLayout(LinearLayoutTest.this);
+                LinearLayout linearLayout = new LinearLayout(BaseAdapterTest.this);
                 linearLayout.setOrientation(LinearLayout.HORIZONTAL);
-                ImageView image = new ImageView(LinearLayoutTest.this);
-                image.setImageResource(R.drawable.qingzhao);
-                image.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                TextView textView = new TextView(LinearLayoutTest.this);
+                ImageView image = new ImageView(BaseAdapterTest.this);
+                image.setImageResource(R.drawable.ic_launcher);
+                image.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+                image.setMaxWidth(50);
+                image.setMaxHeight(50);
+                TextView textView = new TextView(BaseAdapterTest.this);
                 textView.setText("第" + (position + 1) + "个列表项");
                 textView.setTextSize(20);
                 textView.setTextColor(Color.RED);
